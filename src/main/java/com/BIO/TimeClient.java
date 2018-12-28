@@ -20,10 +20,10 @@ public class TimeClient {
         BufferedReader in=null;
         PrintWriter out=null;
         try{
-            socket =new Socket("127.0.0.1",port);
+            socket =new Socket("localhost",port);
             in=new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            out=new PrintWriter(socket.getOutputStream());
-            out.print("QUERY TIME ORDER");
+            out=new PrintWriter(socket.getOutputStream(),true);
+            out.println("QUERY TIME ORDER");
             System.out.println("Send 2 server succeed");
             String resp=in.readLine();
             System.out.println("Now is : "+resp);
