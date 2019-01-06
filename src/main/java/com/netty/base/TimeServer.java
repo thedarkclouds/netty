@@ -11,7 +11,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class TimeServer {
     public static void main(String[] args) throws Exception {
-        int port = 8040;
+        int port = 8041;
         if(args != null && args.length > 0) {
             try {
                 port = Integer.valueOf(args[0]);
@@ -25,6 +25,7 @@ public class TimeServer {
     public class ChildChannelHandler extends ChannelInitializer<SocketChannel>{
         @Override
         protected void initChannel(SocketChannel socketChannel) throws Exception {
+            //套接字通信    管道
             socketChannel.pipeline().addLast(new TimeServerHandler());
         }
     }

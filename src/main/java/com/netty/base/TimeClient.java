@@ -10,8 +10,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
 public class TimeClient {
-    public static void main(String[] args) {
-        int port = 8080;
+    public static void main(String[] args) throws Exception {
+        int port = 8041;
         if (args != null && args.length > 0) {
             try {
                 port = Integer.valueOf(args[0]);
@@ -19,6 +19,7 @@ public class TimeClient {
                 e.printStackTrace();
             }
         }
+        new TimeClient().connect(port,"127.0.0.1");
     }
 
     public void connect(int port, String host) throws Exception {
