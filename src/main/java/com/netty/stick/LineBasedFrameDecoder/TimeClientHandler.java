@@ -1,4 +1,4 @@
-package com.netty.stick;
+package com.netty.stick.LineBasedFrameDecoder;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
