@@ -35,8 +35,8 @@ public class TimeClient {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             //解决粘包问题   添加解码器
-                            //socketChannel.pipeline().addLast(new LineBasedFrameDecoder(1024));
-                           // socketChannel.pipeline().addLast(new StringDecoder());
+                            socketChannel.pipeline().addLast(new LineBasedFrameDecoder(1024));
+                            socketChannel.pipeline().addLast(new StringDecoder());
                            //
                             socketChannel.pipeline().addLast(new TimeClientHandler());
                         }

@@ -26,10 +26,10 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf buf = (ByteBuf) msg;
+       /* ByteBuf buf = (ByteBuf) msg;
         byte[] req = new byte[buf.readableBytes()];
-        buf.readBytes(req);//复制缓存区到数组req里
-        String body = new String(req, "UTF-8");
+        buf.readBytes(req);//复制缓存区到数组req里*/
+        String body = (String) msg;
         System.out.println("Now is :" + body+"; the counter is :"+ ++counter);
     }
 
